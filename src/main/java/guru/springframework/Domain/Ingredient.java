@@ -9,10 +9,21 @@ public class Ingredient {
     private Long id;
     private String description;
     private BigDecimal amount;
-    @ManyToOne
-    private Recipe recipe;
+
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure unitOfMeasure;
+    @ManyToOne
+    private Recipe recipe;
+
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.unitOfMeasure = unitOfMeasure;
+        this.recipe = recipe;
+    }
+
+    public Ingredient() {
+    }
 
     public UnitOfMeasure getUnitOfMeasure() {
         return unitOfMeasure;
