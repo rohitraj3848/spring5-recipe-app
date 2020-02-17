@@ -22,7 +22,7 @@ public class Ingredient {
         this.recipe = recipe;
     }
 
-    public Ingredient() {
+    public Ingredient(){
     }
 
     public UnitOfMeasure getUnitOfMeasure() {
